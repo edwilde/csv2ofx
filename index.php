@@ -61,13 +61,9 @@ print $csv2ofx->getOFX();
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="keywords" content="Nationwide, OFX, convert, bank, financial, file" /><meta name="description" content="Convert statement text files downloaded from Nationwide Bank's online banking system to Open Financial Exchange (OFX) files." />
+
 <title>Convert Nationwide Bank Statements to Open Financial Exchange (OFX)</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
-<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript">try { var pageTracker = _gat._getTracker("UA-308705-12"); pageTracker._initData(); pageTracker._trackPageview(); } catch (error) {}</script>
-<script type="text/javascript" src="js/min.js"></script>
+
 <style type="text/css">
 input
 {
@@ -142,43 +138,14 @@ input#submit
 	<hr class="space"/><hr class="space"/>
 	<hr class="prepend-1 span-12 append-1"/>
 	<hr class="space"/><hr class="space"/>
-	<div id="disqus_thread" class="span-11 append-1 last"></div><script type="text/javascript" src="http://disqus.com/forums/edwildecomnationwide2ofx/embed.js"></script><noscript><a href="http://disqus.com/forums/edwildecomnationwide2ofx/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-	</div>
+
 	<?php } ?>
 </div></form>
-<?php if (!$clean) { ?>
-<div class="prepend-1 span-9 last quiet">
-<h3>Privacy</h3>
-<h4>What you are <b>not</b> sharing</h4>
-<ul>
-<li>Your name, address or any other personal identification</li>
-<li>Your full account number</li>
-<li>Your sort code</li>
-</ul>
-<h4>What you are sharing</h4>
-<ul>
-<li>Your transactions, including amount and <abbr title="In some cases, description can include account numbers. Editing these out before sending is fairly simple using Excel or a simple text editor">description</abbr></li>
-<li>Your account balance</li>
-</ul>
-<h4><b>The file you upload is deleted by the time you receive the OFX file (immediately).</b></h4>
-<p>if you are not comfortable with this, don't use the service and <a href="http://www.nationwide.co.uk/contact_us/making_a_complaint/making_a_complaint.htm">complain to Nationwide</a> - they are the ones who <a href="http://www.nationwide.co.uk/troubleshooting/microsoftmoney/microsoftmoney.htm#q3">have told their customers</a> to put trust in a third party to put their financial data into OFX format.</p><p>The privacy concerns above will be the same for *any* conversion service or application.  I assure you that I have no interest whatsoever in looking at other peoples finances, I am not an accountant and never want to be.</p>
-<h3>Problems?!</h3>
-<p>If something hideous happens, you can find me as <a href="http://www.twitter.com/edwilde/">@edwilde on Twitter</a> or leave a comment here so others can see.</p>
-<h3>Action</h3>
-<p>I would still prefer that Nationwide brought back their direct OFX service, so please keep the complaints flowing.  Send a secure email, <a href="http://www.nationwide.co.uk/contact_us/making_a_complaint/making_a_complaint.htm">complain over the phone</a>, write a letter to <a href="http://www.nationwide.co.uk/search/DisplayArticle.aspx?article=1380">head office</a>, attend a <a href="https://www.nationwide-members.co.uk/talkbacks">talkback session</a> or complain to the FSA.</p><p>Follow the progress at <a href="http://betteronlinebanking.co.uk">betteronlinebanking.co.uk</a>.</p>
-<h3>Disclaimer</h3>
-<p>This converter is in no way associated with Nationwide Bank or <a href="http://www.wesabe.com/">Wesabe</a>.</p>
-</div>
-
-</div>
-<?php } ?>
 <?php
 // page footer
 ?>
 </div>
-<?php if (!$clean) { ?>
-<script type="text/javascript">//<![CDATA[(function() {	var links = document.getElementsByTagName('a');	var query = '?';	for(var i = 0; i < links.length; i++) {	if(links[i].href.indexOf('#disqus_thread') >= 0) {		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';	}	}	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/edwildecomnationwide2ofx/get_num_replies.js' + query + '"></' + 'script>');})();//]]></script>
-<?php } ?>
+
 </body>
 </html>
 <?php
