@@ -26,6 +26,9 @@ if ($submitted) {
 // find & deal with the CSV
 $csv2ofx->parseCSV($_FILES['uploadedFile']['tmp_name']);
 
+// set the csvType
+$csv2ofx->csvType = $_POST["accountType"];
+
 if (!$local) { $path = ""; } else { $path = "maps/"; }
 // include the map
 require_once($path.'map.NationwideUK.php');
@@ -65,7 +68,7 @@ print $csv2ofx->getOFX();
 <title>Convert Nationwide Bank Statements to Open Financial Exchange (OFX)</title>
 
 <style type="text/css">
-input
+input, select
 {
 	font-size:18px;
 	margin-top:0 !important;
@@ -87,6 +90,13 @@ input#submit
 {
 	width: 270px;
 	text-align: center;	
+}
+
+select
+{
+	width: 190px;
+	text-align: left;
+
 }
 
 #ofxType1Label,
@@ -119,6 +129,17 @@ input#submit
 		<div class="span-4"><label for="accountNumber" id="accountNumberLabel">Last Four Digits</label></div>
 		<div class="span-7 last"><input id="accountNumber" type="text" name="accountNumber" value="" maxlength="4"/></div>	</div>
 	<hr class="space"/>
+	<hr class="space"/>
+	<div id="type" class="span-12 last">
+		<div class="span-4"><label for="accountType" id="accountTypeLabel">Account Type</label></div>
+		<div class="span-7 last">
+			<select id="accountType" name="accountType">
+				<option value="CHECKING">Current account</option>
+				<option value="CREDITCARD">Credit Card</option>
+				<option value="SAVINGS">Savings (inc. ISA)</option>
+			</select>
+		</div>
+	</div>
 	<div id="upload" class="span-12 last">		<div class="span-4"><label for="uploadedFile" id="uploadedFileLabel">Full Statement</label></div>
 		<div class="span-7 last"><input id="uploadedFile" name="uploadedFile" type="file" size="9"/></div>
 	</div>
