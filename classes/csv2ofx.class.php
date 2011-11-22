@@ -6,14 +6,14 @@
  *  For more resources visit {@link http://edwilde.com}
  *
  *  @author     Ed Wilde <csv2ofx@edwilde.com>
- *  @version    1.4.4 (last revision: June 01, 2010)
- *  @copyright  (c) 2009 Ed Wilde
+ *  @version    1.4.6 (last revision: November 22, 2011)
+ *  @copyright  (c) 2011 Ed Wilde
  *  @package    csv2ofx
  *  @example    not yet
  */
 class csv2ofx
 {
-	const version = "1.4.5";
+	const version = "1.4.6";
 	public $mapversion = "not loaded";
 
     // public property declaration
@@ -409,7 +409,10 @@ class csv2ofx
 					$ofx .= "<STMTTRN>";
 					$ofx .= $this->br;
 					
-					if (($this->csv[$y][$this->colDebit] == "") || ($this->csv[$y][$this->colDebit] == "0"))
+					//TODO: replace this with an array of 'null' characters eg: "", " ", "0"
+					if (($this->csv[$y][$this->colDebit] == "")
+					|| ($this->csv[$y][$this->colDebit] == "0")
+					|| ($this->csv[$y][$this->colDebit] == " "))
 					{ 
 						$trntype = "CREDIT";
 					} else {
@@ -505,7 +508,10 @@ class csv2ofx
 					$ofx .= $this->tab(5) . "<STMTTRN>";
 					$ofx .= $this->br;
 					
-					if (($this->csv[$y][$this->colDebit] == "") || ($this->csv[$y][$this->colDebit] == "0"))
+					//TODO: replace this with an array of 'null' characters eg: "", " ", "0"
+					if (($this->csv[$y][$this->colDebit] == "")
+					|| ($this->csv[$y][$this->colDebit] == " ")
+					|| ($this->csv[$y][$this->colDebit] == "0"))
 					{ 
 						$trntype = "CREDIT";
 					} else {
