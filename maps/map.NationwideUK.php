@@ -16,9 +16,9 @@ $csv2ofx->bankName = "Nationwide (UK)";
 // form of currency
 $csv2ofx->currency = "GBP";
 
-// mapping variables
+// mapping variables (all numbers start at 0)
 // the first row number where the transactions begin
-$csv2ofx->rowLoopStarts = 6;
+$csv2ofx->rowLoopStarts = 5;
 // column number for the date
 $csv2ofx->colDate = 0;
 // column number for account credits
