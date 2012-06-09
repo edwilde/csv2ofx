@@ -6,14 +6,14 @@
  *  For more resources visit {@link http://edwilde.com}
  *
  *  @author     Ed Wilde <csv2ofx@edwilde.com>
- *  @version    1.4.6 (last revision: November 22, 2011)
- *  @copyright  (c) 2011 Ed Wilde
+ *  @version    1.4.7 (last revision: June 9, 2012)
+ *  @copyright  (c) 2012 Ed Wilde
  *  @package    csv2ofx
  *  @example    not yet
  */
 class csv2ofx
 {
-	const version = "1.4.6";
+	const version = "1.4.7";
 	public $mapversion = "not loaded";
 
     // public property declaration
@@ -429,8 +429,11 @@ class csv2ofx
 					if ($trntype == "CREDIT") {
 						$trnamt = $this->csv[$y][$this->colCredit];
 					} else {
-						$trnamt = "-" . $this->csv[$y][$this->colDebit]; 
+						$trnamt = "-" . $this->csv[$y][$this->colDebit];
 					}
+					
+					// fix for ms money import problem - 9/6/12
+					if (($trnamt == "") || ($trnamt == "-")) { $trnamt = "0.00"; }
 					
 					$ofx .= "<TRNAMT>" . $this->prep($trnamt);
 					$ofx .= $this->br;
@@ -676,6 +679,7 @@ class csv2ofx
 		// prepare strings for output
 		$output = $string;
 		$output = trim($output);
+		$output = str_replace("\" \"", "\"\"", $output);
 		$output = str_replace($this->wordsToStrip, "", $output);
 		$output = htmlspecialchars($output);
 		
